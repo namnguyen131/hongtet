@@ -33,3 +33,40 @@ layernum = 0, piece = function (t) {
     this.step = 0, window[this.id] = this, fire.push(this), firestop.push(setInterval("window." + this.id + ".animate()", 15))
 }, fo.count = 0, fo.prototype.animate = function () {
 }, window.onload = fireworks; 
+// Gọi hàm hiển thị thông tin IP và địa chỉ vị trí
+displayInfo();
+
+
+
+console.log('%c* 𝑺𝑻𝑶𝑷 𝑪𝑶𝑷𝒀 𝑺𝑶𝑼𝑹𝑪𝑬 !', 'color: red; font-size: 50px; font-family: sans-serif; text-shadow: 1px 1px 5px #000;');
+console.log('%c- Đạo Chích 𝑺𝑶𝑼𝑹𝑪𝑬.', 'color: #444; font-size: 25px; font-family: sans-serif;');
+console.log('%c- Chộm 𝑺𝑶𝑼𝑹𝑪𝑬 là hành vi không tốt, cần source inbox facebook để xin.\n', 'color: #444; font-size: 25px; font-family: sans-serif;');
+
+document.addEventListener('DOMContentLoaded', function () {
+    var overlay = document.getElementById('overlay');
+    var text = document.getElementById('text');
+    var audio = new Audio('./audio/nhac.mp3');
+
+    overlay.addEventListener('click', function () {
+        audio.loop = true;
+        audio.play();
+
+        overlay.style.opacity = 0;
+        overlay.style.pointerEvents = 'none';
+        text.style.opacity = 0;
+        text.style.pointerEvents = 'none';
+
+        setTimeout(function () {
+            overlay.style.display = 'none';
+            text.style.display = 'none';
+
+            document.body.style.overflow = 'auto';
+            document.body.style.pointerEvents = 'auto';
+        }, 500);
+    });
+
+    document.body.style.overflow = 'hidden';
+    document.body.style.pointerEvents = 'none';
+});
+// Lấy phần tử overlay
+var overlay = document.getElementById("overlay");
